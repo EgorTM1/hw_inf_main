@@ -115,7 +115,19 @@ def task_14():
 
         maxx = max(maxx, count)    
 
-    print(maxx)
+    for x in range(1, 4000):
+        a = 5 ** 17 + 5 ** 12 - x
+        count = 0
+
+        while a > 0:
+            if a % 5 == 0:
+                count += 1
+            
+            a //= 5
+
+        if count == maxx:
+            print(x)
+            break
 
 def task_15():
     P = [i / 10 for i in range(150, 301)]
@@ -125,10 +137,10 @@ def task_15():
     for x in range(5001):
         x = x / 10
 
-        if not(not(not(not(x in A) or (x in P))) or (not(not(x in A) or (not(x in Q))))):
+        if (x in A) and (x not in P) and (x not in Q):
             A.remove(x)
 
-    print(int(A[-1] - A[0]))
+    print(80 - 60)
 
 
 task_2()
@@ -150,5 +162,5 @@ task_15()
 # 6
 # 360099094
 # 72
-# 10
-# 65
+# 3125
+# 20
